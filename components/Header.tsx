@@ -1,6 +1,6 @@
 "use client";
 
-import { Download, RotateCcw, Upload, Wallet } from "lucide-react";
+import { Download, LogOut, RotateCcw, Upload, Wallet } from "lucide-react";
 import { useRef } from "react";
 import { Button } from "./ui/Card";
 import { Segmented } from "./ui/Segmented";
@@ -56,6 +56,15 @@ export function Header({
             </Button>
             <Button variant="danger" onClick={onReset} title="Restaurar dados padrão">
               <RotateCcw className="size-3.5" aria-hidden /> <span className="hidden sm:inline">Resetar</span>
+            </Button>
+            <Button
+              title="Sair"
+              onClick={async () => {
+                await fetch("/api/logout", { method: "POST" });
+                window.location.replace("/login");
+              }}
+            >
+              <LogOut className="size-3.5" aria-hidden /> <span className="hidden sm:inline">Sair</span>
             </Button>
             <input
               ref={fileRef}
