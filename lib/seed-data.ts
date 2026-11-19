@@ -8,7 +8,7 @@ export const SEED_MONTHS = [
   { label: "Out/26", year: 2026, month: 10 },
   { label: "Nov/26", year: 2026, month: 11 },
   { label: "Dez/26", year: 2026, month: 12 },
-  { label: "Jan/26", year: 2027, month: 1 }, // rótulo mantido como na planilha original
+  { label: "Jan/27", year: 2027, month: 1 },
 ];
 
 export const SEED_INCOMES: { name: string; type: IncomeType; amount: number; month?: number }[] = [

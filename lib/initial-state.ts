@@ -51,6 +51,8 @@ export function normalizeState(s: FinanceState): FinanceState {
     ...base,
     ...s,
     version: 1,
+    // Corrige o rótulo antigo "Jan/26" (vindo depois de Dez/26) para "Jan/27"
+    months: s.months.map((m, i) => (m === "Jan/26" && s.months[i - 1] === "Dez/26" ? "Jan/27" : m)),
     debts: s.debts ?? {},
     whatIf: { ...base.whatIf, ...(s.whatIf ?? {}) },
     optimizer: { ...base.optimizer, ...(s.optimizer ?? {}) },

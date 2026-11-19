@@ -1,6 +1,6 @@
 const PT = ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"];
 
-/** Gera rótulos "Fev/26", "Mar/26"… a partir de um rótulo inicial "Jan/26". */
+/** Gera rótulos "Fev/27", "Mar/27"… a partir de um rótulo inicial "Jan/27". */
 export function monthSequence(start: string, count: number): string[] {
   const [mm, yy] = start.split("/");
   let m = PT.findIndex((x) => x.toLowerCase() === mm?.slice(0, 3).toLowerCase());
